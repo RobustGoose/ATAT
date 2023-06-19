@@ -5,7 +5,7 @@
 ### 1.1 结构文件
 
 
-#### 1. 准备文件：
+#### 准备文件：
 
 (1) *NaFeO2_O3_unitcell.pwmat*
 **——NaFeO_2的config结构文件**
@@ -22,7 +22,7 @@ element_origin = "Fe"
 element2concentration = {"Fe": 0.333333, "Ni": 0.333333, "Mn": 0.333333}
 ```
 
-#### 2. 操作流程：
+#### 操作流程：
 
 (1) 结构文件转换，生成*rndstr.in*文件
 ```
