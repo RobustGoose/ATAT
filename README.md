@@ -7,13 +7,13 @@
 
 #### 1. 准备文件：
 
-(1) **NaFeO2_O3_unitcell.pwmat**
+(1) *NaFeO2_O3_unitcell.pwmat*
 **——NaFeO_2的config结构文件**
 
-(2) _config2rndstr.py_
+(2) *config2rndstr.py*
 **——格式转换**：将config结构文件转换为ATAT计算所用的rndstr格式的结构文件,运行后会输出文件*rndstr.in*
 
-(3) _**generate_rndstrin.py**_
+(3) *generate_rndstrin.py*
 **——引入掺杂位点，生成新的结构文件**：可根据用户需求自定义掺杂元素和浓度，输入文件格式为*rndstr_tem.in*，运行后输出掺杂后的结构文件*rndstr.in*
 ```
 # 掺杂位点
@@ -41,14 +41,14 @@ python generate_rndstrin.py
 
 #### 1. 准备文件：
 
-(1) rndstr.in
-**——ATAT结构文件**:上一步生成的结构文件
+(1) *rndstr.in*
+**——ATAT结构文件**：上一步生成的结构文件
 
-(2) sqscell.out
+(2) *sqscell.out*
 **——扩胞文件**：需要根据掺杂浓度调整
 
-(3) run_sqss.py
-**——可控制时间的多进程sqs**:生成500个sqs结构，每次计算运行时间为10s，运行后输出文件夹*Generating*，包含500个结构的sqs结果
+(3) *run_sqss.py*
+**——可控制时间的多进程sqs**：生成500个sqs结构，每次计算运行时间为10s，运行后输出文件夹*Generating*，包含500个结构的sqs结果
 
 ```
 # 生成的结构数目
@@ -58,8 +58,7 @@ tol = 0.01
 # sqs 运行多久后终止
 runtime = 10    
 ```
-
-(4) run_sqss.sh
+(4) *run_sqss.sh*
 **——提交服务器脚本**:提交*run_sqss.py*任务
 
 #### 2. 操作流程：
@@ -75,22 +74,22 @@ sh runsqs.sh
 
 #### 1. 准备文件：
 
-(1) Generating
+(1) *Generating*
 **——包含500次sqs计算结果的文件夹**
 
-(2) rename.sh
+(2) *rename.sh*
 **——结构格式转换**：批量转化子文件夹下的ATAT格式结构文件*bestsqs.out*为*POSCAR*格式，以进行静电势计算
 
-(3) get_ewald.python
-**——静电势计算**: 计算单个结构的静电势，其中需根据掺杂元素输入元素价态，其输入文件为*POSCAR*
+(3) *get_ewald.python*
+**——静电势计算**：计算单个结构的静电势，其中需根据掺杂元素输入元素价态，其输入文件为*POSCAR*
 ```
 # 添加元素价态
 data = {"Na":1, "Mn":4,"Fe":3,"Ni":2, "O":-2}
 ```
-(4) ewald_sort.sh
-**——静电势批量计算和排序**: 批量计算500个结构的静电势，并进行排序，选出能量最低的50个结构。运行后在每个子文件夹输出ewald能量值文件，并在*Generating*文件下输出静电势排序文件*sort_ewald.txt*
+(4) *ewald_sort.sh*
+**——静电势批量计算和排序**：批量计算500个结构的静电势，并进行排序，选出能量最低的50个结构。运行后在每个子文件夹输出ewald能量值文件，并在*Generating*文件下输出静电势排序文件*sort_ewald.txt*
 
-(5) str_sort.sh
+(5) *str_sort.sh*
 **——提取筛选模型的结构数据**：提取筛选的50个结构数据到文件夹*sort_str*中
 
 #### 2. 操作流程
@@ -125,11 +124,11 @@ sh str_sort.sh
 ### 静电势计算及排序
 #### 1. 准备文件：
 
-(1) POSCAR
+(1) *POSCAR*
 **——通过满钠ATAT计算以及DFT计算后得出的最稳定的结构**
 
-(2) NMFNO.py
-**——空钠静电势计算以及排序**: 批量生成结构，计算静电势并筛选其中50个能量最低的结构，输出ordering文件夹，包括50个vasp格式的结构文件。注意：其中需输入初始元素价态，以及脱钠后的价态变化
+(2) *NMFNO.py*
+**——空钠静电势计算以及排序**：批量生成结构，计算静电势并筛选其中50个能量最低的结构，输出ordering文件夹，包括50个vasp格式的结构文件。注意：其中需输入初始元素价态，以及脱钠后的价态变化
 
 #### 2. 操作流程
 
