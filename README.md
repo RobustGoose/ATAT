@@ -1,6 +1,6 @@
 
 
-# ATAT-Example-NaFe~1/3~Ni~1/3~Mn~1/3~O~2~
+# ATAT-Example-NaFe<sub>1/3</sub>Ni<sub>1/3</sub>Mn<sub>1/3</sub>O<sub>2</sub>
 ## 1 ATAT计算-满钠
 ### 1.1 结构文件
 
