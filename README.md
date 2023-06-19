@@ -9,15 +9,15 @@
 
 (1) NaFeO2_O3_unitcell.pwmat
 
->**NaFeO_2的config结构文件**
+**NaFeO_2的config结构文件**
 
 (2) config2rndstr.py
 
->**格式转换**：将config结构文件转换为ATAT计算所用的rndstr格式的结构文件,运行后会输出文件*rndstr.in*
+**格式转换**：将config结构文件转换为ATAT计算所用的rndstr格式的结构文件,运行后会输出文件*rndstr.in*
 
 (3) generate_rndstrin.py
 
->**引入掺杂位点，生成新的结构文件**：可根据用户需求自定义掺杂元素和浓度，输入文件格式为*rndstr_tem.in*，运行后输出掺杂后的结构文件*rndstr.in*
+**引入掺杂位点，生成新的结构文件**：可根据用户需求自定义掺杂元素和浓度，输入文件格式为*rndstr_tem.in*，运行后输出掺杂后的结构文件*rndstr.in*
 ```
 # 掺杂位点
 element_origin = "Fe"
@@ -45,13 +45,13 @@ python generate_rndstrin.py
 #### 1. 准备文件：
 
 (1) rndstr.in
->**ATAT结构文件**:上一步生成的结构文件
+**ATAT结构文件**:上一步生成的结构文件
 
 (2) sqscell.out
->**扩胞文件**：需要根据掺杂浓度调整
+**扩胞文件**：需要根据掺杂浓度调整
 
 (3) run_sqss.py
->**可控制时间的多进程sqs**:生成500个sqs结构，每次计算运行时间为10s，运行后输出文件夹*Generating*，包含500个结构的sqs结果
+**可控制时间的多进程sqs**:生成500个sqs结构，每次计算运行时间为10s，运行后输出文件夹*Generating*，包含500个结构的sqs结果
 
 ```
 # 生成的结构数目
