@@ -1,6 +1,6 @@
 
 
-# ATAT-Example-NaFeO_2
+# ATAT-Example-NaFe_0.3333Ni_0.3333Mn_0.3333O_2
 ## 1 ATAT计算-满钠
 ### 1.1 结构文件
 
