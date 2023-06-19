@@ -10,10 +10,10 @@
 (1) **NaFeO2_O3_unitcell.pwmat**
 **——NaFeO_2的config结构文件**
 
-(2) **config2rndstr.py**
+(2) _config2rndstr.py_
 **——格式转换**：将config结构文件转换为ATAT计算所用的rndstr格式的结构文件,运行后会输出文件*rndstr.in*
 
-(3) **generate_rndstrin.py**
+(3) _**generate_rndstrin.py**_
 **——引入掺杂位点，生成新的结构文件**：可根据用户需求自定义掺杂元素和浓度，输入文件格式为*rndstr_tem.in*，运行后输出掺杂后的结构文件*rndstr.in*
 ```
 # 掺杂位点
